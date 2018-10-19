@@ -1,0 +1,52 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.pc.eleiosemfake">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name">
+
+        <activity
+            android:name="com.tomer.screenshotsharer.MainActivity"
+            android:theme="@style/Theme.AppCompat">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.tomer.screenshotsharer.AssistLoggerService"
+            android:directBootAware="true"
+            android:permission="android.permission.BIND_VOICE_INTERACTION"
+            tools:targetApi="n">
+            <meta-data
+                android:name="android.voice_interaction"
+                android:resource="@xml/assist_service" />
+            <intent-filter>
+                <action android:name="android.service.voice.VoiceInteractionService" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.tomer.screenshotsharer.AssistLoggerSessionService"
+            android:directBootAware="true"
+            android:permission="android.permission.BIND_VOICE_INTERACTION"
+            tools:targetApi="n" />
+
+        <receiver
+            android:name="com.tomer.screenshotsharer.BootReceiver"
+            tools:targetApi="M">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+</manifest>

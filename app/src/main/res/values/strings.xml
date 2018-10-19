@@ -1,0 +1,15 @@
+<resources>
+
+
+    <string name="app_name"> Eleição sem fake</string>
+    <string name="service_enabled"> Serviço habilitado</string>
+    <string name="service_disabled">Serviço desabilitado</string>
+    <string name="missing_permission_can_t_access_screenshots">Sem permissão! Impossibilitado de acessar as capturas de tela</string>
+    <string name="storage_access_permission_granted">Permissão de acesso ao armazenamento</string>
+    <string name="previews_enabled">Visualização habilitada</string>
+    <string name="previews_disabled">Visualização desabilitada</string>
+    <string name="Screenshot"> Captura de tela</string>
+
+    <string name="save"> Save</string>
+
+</resources>

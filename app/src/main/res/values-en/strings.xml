@@ -9,4 +9,6 @@
     <string name="Screenshot">Screenshot</string>
 
     <string name="save"> Save</string>
+    <string name="nome">Nome</string>
+    <string name="cpf">CPF</string>
 </resources>

@@ -123,6 +123,10 @@ class MainActivity : AppCompatActivity(), View.OnTouchListener, View.OnClickList
 
         etName.setText(sharedPref.getString(Parameters.USER_NAME, ""))
         etDocumentNumber.setText(sharedPref.getString(Parameters.DOCUMENT_INFO, ""))
+
+        setSupportActionBar(toolbar)
+        supportActionBar?.title = getString(R.string.app_name)
+
     }
 
     private fun saveUserInfo() {

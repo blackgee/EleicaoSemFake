@@ -51,12 +51,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <CheckBox
+            android:id="@+id/chkBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:text="add body" />
+
         <Button
             android:id="@+id/btnSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorAccent"
+            android:layout_margin="10dp"
             android:text="@string/save" />
 
 
@@ -69,8 +81,8 @@
         android:layout_margin="10dp"
         android:textOff="@string/service_disabled"
         android:textOn="@string/service_enabled"
-        android:background="@color/green"
-        android:textColor="@color/yellow"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorAccent"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/storage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,8 +96,8 @@
         android:layout_margin="10dp"
         android:textOff="@string/missing_permission_can_t_access_screenshots"
         android:textOn="@string/storage_access_permission_granted"
-        android:background="@color/green"
-        android:textColor="@color/yellow"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorAccent"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/preview"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,8 +111,8 @@
         android:layout_margin="10dp"
         android:textOff="@string/previews_disabled"
         android:textOn="@string/previews_enabled"
-        android:background="@color/green"
-        android:textColor="@color/yellow"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorAccent"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

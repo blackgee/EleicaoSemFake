@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.app.assist.AssistContent
 import android.app.assist.AssistStructure
 import android.content.Context
+import android.content.Context.WINDOW_SERVICE
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -18,13 +19,13 @@ import android.util.Log
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.ImageView
-
-import android.content.Context.WINDOW_SERVICE
+import com.example.pc.eleiosemfake.Parameters
 import com.example.pc.eleiosemfake.R
 
 
 class AssistLoggerSession(context: Context) : VoiceInteractionSession(context) {
-	
+
+
 	override fun onHandleAssist(data: Bundle?, structure: AssistStructure?, content: AssistContent?) {
 		super.onHandleAssist(data, structure, content)
 		Log.d("Data", data!!.toString())
@@ -36,7 +37,7 @@ class AssistLoggerSession(context: Context) : VoiceInteractionSession(context) {
 		if (Settings.canDrawOverlays(context)) {
 			showPreviewAndFinish(screenshot)
 		} else {
-			shareBitmap(screenshot)
+			sendEmail(screenshot)
 			finish()
 		}
 	}
@@ -61,7 +62,7 @@ class AssistLoggerSession(context: Context) : VoiceInteractionSession(context) {
 				}
 				
 				override fun onAnimationEnd(animation: Animator) {
-					shareBitmap(screenshot)
+					sendEmail(screenshot)
 					windowManager.removeView(rootView)
 					finish()
 				}
@@ -76,27 +77,34 @@ class AssistLoggerSession(context: Context) : VoiceInteractionSession(context) {
 			})
 		}
 	}
-	
-	private fun shareBitmap(bitmap: Bitmap?) {
+
+	private fun sendEmail(bitmap: Bitmap?) {
 		if (!canWriteExternalPermission()) {
 			val mainActivity = Intent(context, MainActivity::class.java)
 			mainActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
 			context.startActivity(mainActivity)
 			return
 		}
+
+		val sharedPref = context.getSharedPreferences(Parameters.SHARED_PREF, Context.MODE_PRIVATE)
 		val pathToScreenshot = MediaStore.Images.Media.insertImage(context.contentResolver, bitmap,
 				"screenshot", null)
 		val bmpUri = Uri.parse(pathToScreenshot)
-		val shareIntent = Intent(android.content.Intent.ACTION_SEND)
-		shareIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-		shareIntent.putExtra(Intent.EXTRA_EMAIL  , arrayOf("denuncia.eleicao.ce@dpf.gov.br", "aic@tse.jus.br", "presidencia@tse.jus.br"))
-		shareIntent.putExtra(Intent.EXTRA_SUBJECT, "subject of email")
-		shareIntent.putExtra(Intent.EXTRA_STREAM, bmpUri)
-		shareIntent.putExtra(Intent.EXTRA_TEXT, "Denúncia Anônima.")
-		shareIntent.type = "image/jpeg"
-		val finalShareIntent = Intent.createChooser(shareIntent, "Select the app you want to share the screenshot to")
-		finalShareIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-		context.startActivity(finalShareIntent)
+		val mailIntent = Intent(android.content.Intent.ACTION_SEND)
+		mailIntent.type = "message/rfc822"
+		mailIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+		mailIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("denuncia.eleicao.ce@dpf.gov.br", "aic@tse.jus.br", "presidencia@tse.jus.br"))
+		val name = sharedPref?.getString(Parameters.USER_NAME, "")
+		val id = sharedPref?.getString(Parameters.DOCUMENT_INFO, "")
+		mailIntent.putExtra(Intent.EXTRA_SUBJECT, "Denúncia Fake News: $name - $id")
+		mailIntent.putExtra(Intent.EXTRA_STREAM, bmpUri)
+		var emailBody = context.resources.getString(R.string.email_body)
+		if (sharedPref.getBoolean(Parameters.ADD_BODY, false)) {
+			emailBody += context.resources.getString(R.string.email_additional_body)
+		}
+		mailIntent.putExtra(Intent.EXTRA_TEXT, emailBody)
+		mailIntent.type = "image/jpeg"
+		context.startActivity(mailIntent)
 	}
 	
 	private fun canWriteExternalPermission(): Boolean {

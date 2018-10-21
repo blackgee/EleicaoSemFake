@@ -14,10 +14,11 @@
     <string name="select_assist_app">Selecione o &appname; como o seu aplicativo assistente</string>
     <string name="permit_drawing_over_apps">Permita o app ser visto sobre os outros</string>
 
-    <string name="save">Save</string>
+    <string name="save">Salvar</string>
     <string name="nome">Nome</string>
     <string name="cpf">CPF</string>
-    <string name="email_body">I, above identified, request to investigate the report sent \n</string>
-    <string name="email_additional_body">Anonimous report.</string>
-    <string name="saved">Saved Successfully</string>
+    <string name="email_body">Eu, acima identificado(a), solicito que seja investigada a denúncia encaminhada \n</string>
+    <string name="email_additional_body">Denúncia Anônima</string>
+    <string name="saved">Salvo com sucesso</string>
+
 </resources>

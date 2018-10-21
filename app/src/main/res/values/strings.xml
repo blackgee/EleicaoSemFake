@@ -1,22 +1,24 @@
 <!DOCTYPE resources [<!ENTITY appname "Eleição sem fake">]>
 <resources>
     <string name="app_name">&appname;</string>
-    <string name="service_enabled">Service Enabled</string>
-    <string name="service_disabled">Service Disabled</string>
-    <string name="missing_permission_can_t_access_screenshots">Missing Permission! Can\'t access screenshots</string>
-    <string name="storage_access_permission_granted">Storage access permission granted</string>
-    <string name="previews_enabled">Previews enabled</string>
-    <string name="previews_disabled">Previews disabled</string>
-    <string name="Screenshot">Screenshot</string>
+    <string name="service_enabled">Serviço habilitado</string>
+    <string name="service_disabled">Serviço desabilitado</string>
+    <string name="missing_permission_can_t_access_screenshots">Sem permissão! Impossibilitado de acessar as capturas de tela</string>
+    <string name="storage_access_permission_granted">Permissão de acesso ao armazenamento</string>
+    <string name="previews_enabled">Visualização habilitada</string>
+    <string name="previews_disabled">Visualização desabilitada</string>
+    <string name="Screenshot">Captura de tela</string>
 
-    <string name="select_assist_app">Select &appname; as your assist app</string>
-    <string name="permit_drawing_over_apps">Permit drawing over other apps preview</string>
+    <string name="select_assist_app">Selecione o &appname; como o seu aplicativo assistente</string>
+    <string name="permit_drawing_over_apps">Permita o app ser visto sobre os outros</string>
 
-    <string name="save"> Save</string>
+    <string name="save">Salvar</string>
     <string name="nome">Nome</string>
     <string name="cpf">CPF</string>
-    <string name="email_body">I, above identified, request to investigate the report sent \n</string>
+    <string name="email_body">Eu, acima identificado(a), solicito que seja investigada a denúncia encaminhada \n</string>
+    <string name="email_additional_body">Denúncia Anônima</string>
     <string name="email_subject">Denúncia Fake News</string>
-    <string name="email_additional_body">Anonimous report.</string>
-    <string name="saved">Saved Successfully</string>
+
+    <string name="saved">Salvo com sucesso</string>
+
 </resources>

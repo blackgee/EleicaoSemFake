@@ -85,7 +85,6 @@ class AssistLoggerSession(context: Context) : VoiceInteractionSession(context) {
 			context.startActivity(mainActivity)
 			return
 		}
-
 		val sharedPref = context.getSharedPreferences(Parameters.SHARED_PREF, Context.MODE_PRIVATE)
 		val pathToScreenshot = MediaStore.Images.Media.insertImage(context.contentResolver, bitmap,
 				"screenshot", null)
@@ -93,7 +92,7 @@ class AssistLoggerSession(context: Context) : VoiceInteractionSession(context) {
 		val mailIntent = Intent(android.content.Intent.ACTION_SEND)
 		mailIntent.type = "message/rfc822"
 		mailIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-		mailIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("denuncia.eleicao.ce@dpf.gov.br", "aic@tse.jus.br", "presidencia@tse.jus.br"))
+        mailIntent.putExtra(Intent.EXTRA_EMAIL, context.resources.getStringArray(R.array.emails))
 		val name = sharedPref?.getString(Parameters.USER_NAME, "")
 		val id = sharedPref?.getString(Parameters.DOCUMENT_INFO, "")
 		var subject = "[" + context.resources.getString(R.string.email_subject) + "]"

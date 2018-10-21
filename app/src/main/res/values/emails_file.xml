@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emails">
+        <item>denuncia.eleicao.ce@dpf.gov.br</item>
+        <item>aic@tse.jus.br</item>
+        <item>cmpf@mpf.mp.br</item>
+    </string-array>
+</resources>

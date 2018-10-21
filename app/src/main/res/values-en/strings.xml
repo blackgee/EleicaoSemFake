@@ -19,6 +19,8 @@
     <string name="cpf">CPF</string>
     <string name="email_body">Eu, acima identificado(a), solicito que seja investigada a denúncia encaminhada \n</string>
     <string name="email_additional_body">Denúncia Anônima</string>
+    <string name="email_subject">Denúncia Fake News</string>
+
     <string name="saved">Salvo com sucesso</string>
 
 </resources>

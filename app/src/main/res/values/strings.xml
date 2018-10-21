@@ -16,6 +16,7 @@
     <string name="nome">Nome</string>
     <string name="cpf">CPF</string>
     <string name="email_body">I, above identified, request to investigate the report sent \n</string>
+    <string name="email_subject">Denúncia Fake News</string>
     <string name="email_additional_body">Anonimous report.</string>
     <string name="saved">Saved Successfully</string>
 </resources>

@@ -96,7 +96,14 @@ class AssistLoggerSession(context: Context) : VoiceInteractionSession(context) {
 		mailIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("denuncia.eleicao.ce@dpf.gov.br", "aic@tse.jus.br", "presidencia@tse.jus.br"))
 		val name = sharedPref?.getString(Parameters.USER_NAME, "")
 		val id = sharedPref?.getString(Parameters.DOCUMENT_INFO, "")
-		mailIntent.putExtra(Intent.EXTRA_SUBJECT, "[Denúncia Fake News]: $name - $id")
+		var subject = "[" + context.resources.getString(R.string.email_subject) + "]"
+		if (name != "") {
+			subject += ": $name"
+		}
+		if (id != "") {
+			subject += " - $id"
+		}
+		mailIntent.putExtra(Intent.EXTRA_SUBJECT, subject)
 		mailIntent.putExtra(Intent.EXTRA_STREAM, bmpUri)
 		var emailBody = context.resources.getString(R.string.email_body)
 		if (sharedPref.getBoolean(Parameters.ADD_BODY, false)) {

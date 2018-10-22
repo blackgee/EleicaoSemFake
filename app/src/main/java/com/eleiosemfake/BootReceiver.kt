@@ -1,4 +1,4 @@
-package com.tomer.screenshotsharer
+package com.eleiosemfake
 
 
 import android.content.BroadcastReceiver

@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.pc.eleiosemfake">
+    package="com.eleiosemfake">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -13,7 +13,7 @@
         android:label="@string/app_name">
 
         <activity
-            android:name="com.tomer.screenshotsharer.MainActivity"
+            android:name="com.eleiosemfake.MainActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,7 @@
         </activity>
 
         <service
-            android:name="com.tomer.screenshotsharer.AssistLoggerService"
+            android:name="com.eleiosemfake.AssistLoggerService"
             android:directBootAware="true"
             android:permission="android.permission.BIND_VOICE_INTERACTION"
             tools:targetApi="n">
@@ -35,13 +35,13 @@
         </service>
 
         <service
-            android:name="com.tomer.screenshotsharer.AssistLoggerSessionService"
+            android:name="com.eleiosemfake.AssistLoggerSessionService"
             android:directBootAware="true"
             android:permission="android.permission.BIND_VOICE_INTERACTION"
             tools:targetApi="n" />
 
         <receiver
-            android:name="com.tomer.screenshotsharer.BootReceiver"
+            android:name="com.eleiosemfake.BootReceiver"
             tools:targetApi="M">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />

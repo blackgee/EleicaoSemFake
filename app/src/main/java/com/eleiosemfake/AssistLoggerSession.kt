@@ -1,4 +1,4 @@
-package com.tomer.screenshotsharer
+package com.eleiosemfake
 
 import android.animation.Animator
 import android.app.assist.AssistContent
@@ -19,8 +19,7 @@ import android.util.Log
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.ImageView
-import com.example.pc.eleiosemfake.Parameters
-import com.example.pc.eleiosemfake.R
+import com.eleiosemfake.R
 
 
 class AssistLoggerSession(context: Context) : VoiceInteractionSession(context) {

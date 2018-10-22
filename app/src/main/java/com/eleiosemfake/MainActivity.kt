@@ -1,4 +1,4 @@
-package com.tomer.screenshotsharer
+package com.eleiosemfake
 
 import android.Manifest
 import android.content.Context
@@ -15,8 +15,6 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.CheckBox
 import android.widget.Toast
-import com.example.pc.eleiosemfake.Parameters
-import com.example.pc.eleiosemfake.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 

@@ -1,4 +1,4 @@
-package com.tomer.screenshotsharer
+package com.eleiosemfake
 
 import android.os.Bundle
 import android.service.voice.VoiceInteractionSessionService

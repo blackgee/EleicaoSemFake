@@ -1,4 +1,4 @@
-package com.example.pc.eleiosemfake
+package com.eleiosemfake
 
 /**
  * Created by Pc on 10/19/2018.
